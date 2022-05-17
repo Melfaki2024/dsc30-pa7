@@ -149,7 +149,7 @@ public class dHeap<T extends Comparable<? super T>> implements dHeapInterface<T>
             heap[0] = heap[size() - 1];
             heap[size() - 1] = null;
             trickleDown(0);
-            return temp;
+            return element();
         }
     }
 
