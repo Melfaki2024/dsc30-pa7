@@ -188,7 +188,7 @@ public class dHeap<T extends Comparable<? super T>> implements dHeapInterface<T>
         while (child_index < size()){
             T neut_value = value;
             int neut_index = -1;
-            for (int i = 0; i < d - 1 && i + child_index < size() - 1; i++){
+            for (int i = 0; i < d && i + child_index < size(); i++){
                 if (heap[i + child_index].compareTo(neut_value) > 0 && isMaxHeap == true){ //if this child is greater
                     neut_value = heap[i + child_index];
                     neut_index = i + child_index;
@@ -206,7 +206,7 @@ public class dHeap<T extends Comparable<? super T>> implements dHeapInterface<T>
                 heap[index] = heap[neut_index];
                 heap[neut_index] = temp;
                 index = neut_index;
-                child_index = 2 + index + 1;
+                child_index = 2 * index + 1;
             }
         }
     }
