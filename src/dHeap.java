@@ -183,7 +183,7 @@ public class dHeap<T extends Comparable<? super T>> implements dHeapInterface<T>
      */
     private void trickleDown(int index) {
         /* This is a percolating down algorithm for both min-heap and max-heap. */
-        int child_index = d * index + 1;
+        int child_index = 2 * index + 1;
         T value = heap[index];
         while (child_index < size()){
             T neut_value = value;
@@ -206,7 +206,7 @@ public class dHeap<T extends Comparable<? super T>> implements dHeapInterface<T>
                 heap[index] = heap[neut_index];
                 heap[neut_index] = temp;
                 index = neut_index;
-                child_index = d + index + 1;
+                child_index = 2 + index + 1;
             }
         }
     }
