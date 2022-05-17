@@ -185,7 +185,7 @@ public class dHeap<T extends Comparable<? super T>> implements dHeapInterface<T>
         /* This is a percolating down algorithm for both min-heap and max-heap. */
         int child_index = 2 * index + 1;
         T value = heap[index];
-        while (child_index < size()){
+        while (child_index < size() - 1){
             T neut_value = value;
             int neut_index = -1;
             for (int i = 0; i < d && i + child_index < size(); i++){
