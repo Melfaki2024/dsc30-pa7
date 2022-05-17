@@ -373,4 +373,16 @@ public class dHeapTester {
         test.remove();
         assert (test.element().equals(10));
     }
+    @Test
+    public void dheap_heap_test9(){
+        dHeap<Integer> test = new dHeap<>(4,50, false);
+        test.add(5);
+        test.add(10);
+        test.remove();
+        test.add(1);
+        test.add(93);
+        test.remove();
+        assert (test.element().equals(10));
+    }
+
 }

@@ -136,10 +136,10 @@ public class dHeap<T extends Comparable<? super T>> implements dHeapInterface<T>
         * and assign it to the latest added node and assign that node to null.
         * After this, I use trickleDown from the top to shift the tree into
         * proper order. */
-        if (heap[0] == null){ //heap is empty
+        if (heap[0] == null){
             throw new NoSuchElementException();
         }
-        if (size() == 1){ //if this array is empty
+        if (size() == 1){
             T temp = heap[0];
             heap[0] = null;
             return temp;
@@ -193,7 +193,7 @@ public class dHeap<T extends Comparable<? super T>> implements dHeapInterface<T>
                     neut_value = heap[i + child_index];
                     neut_index = i + child_index;
                 }
-                else if (heap[i + child_index].compareTo(neut_value) < 0 && isMaxHeap == false){
+                if (heap[i + child_index].compareTo(neut_value) < 0 && isMaxHeap == false){
                     neut_value = heap[i + child_index];
                     neut_index = i + child_index;
                 }
@@ -222,15 +222,13 @@ public class dHeap<T extends Comparable<? super T>> implements dHeapInterface<T>
             if (heap[index].compareTo(heap[parent_index]) <= 0 && isMaxHeap == true){
                 return;
             }
-            else if (heap[parent_index].compareTo(heap[index]) <= 0 && isMaxHeap == false){
+            if (heap[parent_index].compareTo(heap[index]) <= 0 && isMaxHeap == false) {
                 return;
             }
-            else {
-                T temp = heap[index];
-                heap[index] = heap[parent_index];
-                heap[parent_index] = temp;
-                index = parent_index;
-            }
+            T temp = heap[index];
+            heap[index] = heap[parent_index];
+            heap[parent_index] = temp;
+            index = parent_index;
         }
     }
     /**
