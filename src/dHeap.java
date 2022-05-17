@@ -222,13 +222,15 @@ public class dHeap<T extends Comparable<? super T>> implements dHeapInterface<T>
             if (heap[index].compareTo(heap[parent_index]) <= 0 && isMaxHeap == true){
                 return;
             }
-            if (heap[parent_index].compareTo(heap[index]) <= 0 && isMaxHeap == false) {
+            else if (heap[parent_index].compareTo(heap[index]) <= 0 && isMaxHeap == false){
                 return;
             }
-            T temp = heap[index];
-            heap[index] = heap[parent_index];
-            heap[parent_index] = temp;
-            index = parent_index;
+            else {
+                T temp = heap[index];
+                heap[index] = heap[parent_index];
+                heap[parent_index] = temp;
+                index = parent_index;
+            }
         }
     }
     /**
