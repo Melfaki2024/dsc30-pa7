@@ -6,6 +6,8 @@
 /**
  * This class implements a sorting algorithm that uses the heap structure to sort
  * the input integer array
+ * @author Mohamed Elmostafa Elfaki
+ * @since May 16th, 2022
  */
 public class HeapSort {
     /**
@@ -17,7 +19,9 @@ public class HeapSort {
         /* I loop through start to end (inclusive) and add it
         * to my min-heap and remove it immediatly to assign it to
         * the array. */
-        dHeap<Integer> SortQueue = new dHeap<>(2,6,false);
+        int defaultSize = 6;
+        int defaultBranchingFactor = 2;
+        dHeap<Integer> SortQueue = new dHeap<>(defaultBranchingFactor,defaultSize,false);
         for (int mystart = start; mystart < end; mystart++){
             SortQueue.add(arr[mystart]);
         }

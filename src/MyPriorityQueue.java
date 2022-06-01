@@ -5,8 +5,9 @@
 
 /**
  * This class uses the dHeap class to implement the priority queue operations.
- *
  * @param <T> Generic type
+ * @author Mohamed Elmostafa Elfaki
+ * @since May 16th, 2022
  */
 public class MyPriorityQueue<T extends Comparable<? super T>> {
 
@@ -18,7 +19,8 @@ public class MyPriorityQueue<T extends Comparable<? super T>> {
      * @param initialSize the given size
      */
     public MyPriorityQueue(int initialSize) {
-        pQueue = new dHeap<>(5, initialSize, true);
+        int assignedAry = 5;
+        pQueue = new dHeap<>(assignedAry, initialSize, true);
     }
 
     /**

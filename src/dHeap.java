@@ -7,8 +7,9 @@ import java.util.*;
 
 /**
  * This class implements the head interface to create d-ary heaps.
- * 
  * @param <T> Generic type
+ * @author Mohamed Elmostafa Elfaki
+ * @since May 16th, 2022
  */
 public class dHeap<T extends Comparable<? super T>> implements dHeapInterface<T> {
 
@@ -189,7 +190,7 @@ public class dHeap<T extends Comparable<? super T>> implements dHeapInterface<T>
             T neut_value = value;
             int neut_index = -1;
             for (int i = 0; i < d && i + child_index < size(); i++){
-                if (heap[i + child_index].compareTo(neut_value) > 0 && isMaxHeap == true){ //if this child is greater
+                if (heap[i + child_index].compareTo(neut_value) > 0 && isMaxHeap == true){
                     neut_value = heap[i + child_index];
                     neut_index = i + child_index;
                 }
